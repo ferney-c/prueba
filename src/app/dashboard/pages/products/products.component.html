@@ -1,0 +1,30 @@
+<!-- titulo = listado de productos -->
+
+<h4>Listado de productos</h4>
+
+<br />
+<br />
+
+<ul>
+  @for (product of productsService.products(); track product.id) {
+
+  <li>
+    <h1 class="mx-5">
+      <b>Nombre:</b>
+      <a
+        [routerLink]="['/dashboard/product', product.id]"
+        class="hover:underline"
+        routerLinkActive="router-link-active"
+      >
+        {{ product.name }}
+      </a>
+    </h1>
+    <h1 class="mx-5"><b>Descripcion:</b> {{ product.description }}</h1>
+    <h1 class="mx-5"><b>Precio:</b> {{ product.price }}</h1>
+    <br />
+  </li>
+
+  }@empty {
+  <h1>Espere por favor!!</h1>
+  }
+</ul>

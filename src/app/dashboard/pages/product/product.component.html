@@ -1,0 +1,19 @@
+<h1> {{ titleLabel() }} </h1>
+
+<br>
+
+@if ( product() ) {
+
+    <section>
+
+        <div>
+            <h3 class="mx-5"> <b>Nombre:</b> {{ product()?.name }} </h3>
+            <p class="mx-5"> <b>Descripcion:</b> {{ product()?.description }} </p>
+            <p class="mx-5"> <b>Precio:</b> {{ product()?.price }} </p>
+        </div>
+
+    </section>
+
+}@else {
+    <p>Cargando Información</p>
+}

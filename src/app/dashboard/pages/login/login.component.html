@@ -1,0 +1,37 @@
+<body>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+    />
+
+   <h1> {{ user }} </h1>
+  
+    <form [formGroup]="myForm" (ngSubmit)="submitFormulario()">
+      <img
+        src="https://imagenes.universia.net/gc/net/images/institution/30883_Universidad_del_Valle_Pacifico.jpg"
+        alt=""
+        class="univa"
+      />
+  
+      <label for="username">Username:</label>
+      <input
+        formControlName="usuario"
+        type="text"
+        id="username"
+        name="username"
+        required
+      />
+  
+      <label for="password">Password:</label>
+      <input
+        formControlName="password"
+        type="password"
+        id="password"
+        name="password"
+        required
+      />
+  
+      <button class="button">Login</button>
+    </form>
+  </body>
+  
