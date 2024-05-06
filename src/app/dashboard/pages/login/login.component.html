@@ -4,7 +4,7 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
     />
 
-   <h1> {{ user }} </h1>
+   <button (click)="me()">Obtener usuario Autenticado</button>
   
     <form [formGroup]="myForm" (ngSubmit)="submitFormulario()">
       <img
@@ -15,7 +15,7 @@
   
       <label for="username">Username:</label>
       <input
-        formControlName="usuario"
+        formControlName="email"
         type="text"
         id="username"
         name="username"

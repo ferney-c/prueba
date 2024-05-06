@@ -17,14 +17,5 @@ export class SidemenuComponent {
     .filter((route) => route && route.path)
     .filter((route) => !route.path?.includes(':'));
 
-  constructor() {
-    /* const dashboardRoutes = routes
-    .map(route => route.children ?? [] )
-    .flat()
-    .filter(route => route && route.path)
-    .filter(route => !route.path?.includes(':'))
-
-
-    console.log(dashboardRoutes); */
-  }
+  constructor() {}
 }

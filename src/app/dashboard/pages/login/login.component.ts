@@ -19,17 +19,19 @@ export default class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder, private login: AutenticacionService) {}
 
   ngOnInit(): void {
-    axios.defaults.withCredentials = true; // para que axios envie las cookies al servidor
-    axios.defaults.withXSRFToken = true; // para que axios envie el token de csrf al servidor
-    axios.defaults.baseURL = 'http://localhost:8000'; // para que axios envie el token de csrf al servidor
-
     this.myForm = this.createMyForm();
   }
 
   private createMyForm(): FormGroup {
     return this.fb.group({
-      usuario: ['fernigga@gmail.com', Validators.required],
-      password: ['fernigga', Validators.required]
+      email: ['ferney@gmail.com', Validators.required],
+      password: ['12345678', Validators.required]
+    });
+  }
+
+  public me(){
+    axios.get('/api/user').then((response) => {
+      console.log(response.data);
     });
   }
 
@@ -40,6 +42,7 @@ export default class LoginComponent implements OnInit {
     axios.get('/sanctum/csrf-cookie').then( () => {
       axios.post('/login', this.myForm.value).then((response) => {
         console.log(response);
+        //window.location.href = '/dashboard/product-list';
       });
     });
 
